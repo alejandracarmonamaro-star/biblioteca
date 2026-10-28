@@ -2,7 +2,7 @@
 
 Primera versión de la aplicación de una biblioteca de barrio, en **Python** (consola) y como **aplicación web** (GitHub Pages).
 
-🌐 **Versión web:** https://TU_USUARIO.github.io/NOMBRE_DEL_REPOSITORIO/  *(cambia este enlace por el tuyo)*
+🌐 **Versión web:**(https://alejandracarmonamaro-star.github.io/biblioteca/)  *(cambia este enlace por el tuyo)*
 
 ## Estructura
 
