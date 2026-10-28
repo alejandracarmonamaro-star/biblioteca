@@ -1,0 +1,68 @@
+:root {
+  --fondo: #f6f4ef;
+  --tarjeta: #ffffff;
+  --texto: #25221d;
+  --suave: #6b655c;
+  --acento: #2f5d50;
+  --acento-texto: #ffffff;
+  --borde: #ddd6c8;
+  --ok: #1f6b3b;
+  --ok-fondo: #e3f3e8;
+  --error: #9b1c1c;
+  --error-fondo: #fbe4e4;
+  --libre: #dff0e4;
+  --ocupado: #f4dcd6;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --fondo: #171614; --tarjeta: #22201d; --texto: #ece7dd; --suave: #a59e91;
+    --acento: #6fb39f; --acento-texto: #10211c; --borde: #3a362f;
+    --ok: #8fd6a8; --ok-fondo: #1d3326; --error: #f0a3a3; --error-fondo: #3a1f1f;
+    --libre: #24402e; --ocupado: #4a2b26;
+  }
+}
+* { box-sizing: border-box; }
+body { margin: 0; font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; background: var(--fondo); color: var(--texto); line-height: 1.45; }
+.cabecera { display: flex; flex-wrap: wrap; gap: 1rem; justify-content: space-between; align-items: center; padding: 1.2rem clamp(1rem, 4vw, 3rem); background: var(--acento); color: var(--acento-texto); }
+.cabecera h1 { margin: 0; font-size: 1.6rem; }
+.sub { margin: .2rem 0 0; opacity: .9; font-size: .9rem; }
+.fecha { display: flex; flex-wrap: wrap; gap: .5rem; align-items: center; }
+main { max-width: 980px; margin: 0 auto; padding: 1rem clamp(1rem, 4vw, 2rem) 2rem; display: grid; gap: 1.2rem; }
+section { background: var(--tarjeta); border: 1px solid var(--borde); border-radius: 12px; padding: 1.1rem 1.2rem; }
+h2 { margin: 0 0 .8rem; font-size: 1.2rem; }
+h3 { margin: 1.2rem 0 .5rem; font-size: 1rem; color: var(--suave); }
+label { display: block; font-size: .85rem; color: var(--suave); margin-bottom: .2rem; }
+input, select { font: inherit; padding: .5rem .6rem; border: 1px solid var(--borde); border-radius: 8px; background: var(--fondo); color: var(--texto); min-width: 0; }
+input[type="search"] { width: 100%; }
+button { font: inherit; cursor: pointer; padding: .5rem .9rem; border-radius: 8px; border: 1px solid var(--acento); background: var(--acento); color: var(--acento-texto); }
+button.secundario { background: transparent; color: inherit; border-color: currentColor; }
+.cabecera button { background: var(--acento-texto); color: var(--acento); border-color: var(--acento-texto); }
+.cabecera button.secundario { background: transparent; color: var(--acento-texto); border-color: var(--acento-texto); }
+button:hover { filter: brightness(1.1); }
+:focus-visible { outline: 3px solid #e0a100; outline-offset: 2px; }
+.fila { display: flex; flex-wrap: wrap; gap: .7rem; align-items: flex-end; }
+.campo { display: flex; flex-direction: column; flex: 1 1 200px; }
+.campo input, .campo select { width: 100%; }
+.libros { list-style: none; padding: 0; margin: .8rem 0 0; display: grid; gap: .7rem; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); }
+.libros li { border: 1px solid var(--borde); border-radius: 10px; padding: .7rem .8rem; }
+.libros strong { display: block; }
+.autor { color: var(--suave); font-size: .9rem; }
+.chips { display: flex; flex-wrap: wrap; gap: .3rem; margin-top: .5rem; }
+.chip { font-size: .75rem; padding: .15rem .5rem; border-radius: 999px; border: 1px solid var(--borde); }
+.chip.disponible { background: var(--libre); }
+.chip.prestado { background: var(--ocupado); }
+.nota { font-size: .8rem; color: var(--suave); margin-top: .4rem; }
+.tabla-scroll { overflow-x: auto; margin-top: .8rem; }
+table { border-collapse: collapse; width: 100%; font-size: .92rem; }
+th, td { text-align: left; padding: .45rem .6rem; border-bottom: 1px solid var(--borde); white-space: nowrap; }
+th { color: var(--suave); font-weight: 600; }
+.etiqueta-mal { color: var(--error); font-weight: 600; }
+.etiqueta-bien { color: var(--ok); }
+.reservas { margin: 0; padding-left: 1.3rem; }
+.vacio { color: var(--suave); font-style: italic; }
+.mensaje { margin: 1rem auto 0; max-width: 940px; width: calc(100% - 2rem); padding: .7rem 1rem; border-radius: 10px; border: 1px solid; }
+.mensaje.ok { background: var(--ok-fondo); color: var(--ok); border-color: var(--ok); }
+.mensaje.error { background: var(--error-fondo); color: var(--error); border-color: var(--error); }
+.aviso { text-align: center; padding: 1rem; }
+footer { text-align: center; padding: 1rem; color: var(--suave); font-size: .85rem; }
+.solo-lectores { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
